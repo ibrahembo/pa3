@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Own Page</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .profile-container {
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            
+        }
+        
+        .profile-container h1,p {
+
+            padding-bottom:5px;
+        }
+        
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #22d3ee;
+            padding: 4px;
+            margin-bottom: 15px;
+        }
+
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
+            text-transform: capitalize;
+        }
+
+        .glass-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .glass-item:hover {
+          
+            transform: scale(1.02);
+            background: rgba(79, 252, 255, 0.1);
+            border-color: #22d3ee; 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+
+        }
+
+        .glass-item i {
+            position: absolute;
+            left: 20px;
+            font-size: 1.3rem;
+        }
+
+        .skills-container {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .skill-box {
+            margin-bottom: 25px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background: #22d3ee;
+            border-radius: 10px;
+            transition: width 2s cubic-bezier(0.1, 0.5, 0.5, 1);
+            position: relative;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 2s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 0.7rem;
+            color: #475569;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="profile">
+        <div class="profile-container" data-aos="fade-down">
+            <img src="/img/photo1.jpg" alt="Profile" class="profile-img">
+            <h1>IBRAHIM AHMED</h1>
+            <p style="color: #94a3b8; font-size: 0.8rem;">Web Developer | Crafting Digital Experiences</p>
+
+            <div class="links-list">
+                <a href="#" target="_blank" class="glass-item">GitHub <i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/ib9_hel?igsh=MWR2anJqa3BqcHFieg==" target="_blank" class="glass-item">Instagram <i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" class="glass-item">Twitter X <i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.tiktok.com/@brahz.a?_r=1&_t=ZS-92a4rQQlCi1" target="_blank" class="glass-item">TikTok <i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/966547658959" target="_blank" class="glass-item">WhatsApp <i class="fab fa-whatsapp"></i></a>
+                <a href="https://linkedin.com/in/YOUR_USER" target="_blank" class="glass-item">LinkedIn <i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills-section">
+        <div class="skills-container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="skill-box">
+                <div class="skill-header">
+                    <span>HTML / CSS</span>
+                    <span>88%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar" data-width="88%" style="background: #22d3ee;"></div>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-header">
+                    <span>Tailwind CSS</span>
+                    <span>77%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar" data-width="77%" style="background: #22d3ee;"></div>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-header">
+                    <span>JavaScript</span>
+                    <span>63%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar" data-width="63%" style="background: #22d3ee;"></div>
+                </div>
+            </div>
+
+              <div class="skill-box">
+                <div class="skill-header">
+                    <span>React.js</span>
+                    <span>56%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar" data-width="56%" style="background: #22d3ee;"></div>
+                </div>
+            </div>
+
+
+              <div class="skill-box">
+                <div class="skill-header">
+                    <span>Git & GitHub</span>
+                    
+                    <span>61%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar" data-width="61%" style="background: #22d3ee;"></div>
+                </div>
+            </div>
+        </div>
+        <footer>© 2026 إبراهيم أحمد</footer>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.progress-bar');
+                    bars.forEach(bar => {
+                        bar.style.width = bar.getAttribute('data-width');
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(document.querySelector('#skills-section'));
+    </script>
+</body>
+</html>
